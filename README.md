@@ -3,7 +3,7 @@ ok-agenda-mini-vis
 
 Mini visualisations for the agenda feature on Open Knesset
 
-![Screenshot](https://github.com/yaninelbi/ok-agenda-mini-vis/raw/master/screen.jpg "Screenshot")
+![Screenshot](https://github.com/yaninelbi/ok-agenda-mini-vis/blob/master/screen.png?raw=true "Screenshot")
 
 ![Sketch](http://www.hasadna.org.il/wp-content/uploads/2012/10/oknesset-agenda-widget-sketch-2.png "Optional title")
 
