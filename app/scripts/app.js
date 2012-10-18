@@ -3,26 +3,27 @@
 ;(function($, window, undefined) {
   'use strict';
 
+  // Caution : This was a quick-and-dirty implementation. Refactoring is required.
+  // ------------------
   // TODOS:
   // ------------------
   // All parties / X - DONE
   // Tooltips - DONE
-  // Colors
-  // X, Y Axis and legends
-  // Clear edges
-  // Circles below x
-  // Crossfilter
+  // Colors - DONE
+  // Zooming and panning
   // + and -
+  // Circles below x
+  // X, Y Axis and legends
   // Circles above bars
   // User avatar
   // Popover design
-  // Animations on changes
-  // Responsiveness
-  // Pubsub and OOP
+  // Animations on changes (update+transition)
+  // Responsiveness (?)
+  // Pubsub and OOP (Refactoring, better encapsulation)
   // Coffeescript
-  // Remove dependencies
-  // Build & embed
-  // Sass
+  // Remove dependencies (_, Modernizr)
+  // Build & embed (Async loading of iframe, a-la-facebook)
+  // Sass, remove foundation, replace with compass reset
 
   // Spin.js jQuery Plugin
   $.fn.spin = function(opts) {
@@ -116,6 +117,7 @@
 
   // Hasadna code
 
+  // TODO: Deffered calls
   function getParties(callback) {
     $.getJSON('http://oknesset.org/api/v2/party/?callback=?',
       function(data) {
@@ -154,10 +156,10 @@
         var len = data.parties.length;
         for(; i < len; i++) {
           window.newParties[i].score = data.parties[i].score;
+          // Computing a random volume until the API implements it
           var madeUpVolume;
           madeUpVolume = Math.random() * 100;
           madeUpVolume = 75;
-          // Computing a random volume until the API implements it
           window.newParties[i].volume = (data.parties[i].volume ? data.parties[i].volume : madeUpVolume);
         }
         window.newParties = _.sortBy(window.newParties, function(p) {
@@ -222,6 +224,7 @@
     var MIN_SCORE = d3.min(dataset, function(d) { return d[0]; });
     var MAX_SCORE = d3.max(dataset, function(d) { return d[0]; });
 
+    // Not in use right now, test this scale vs the custom color implementation
     var color = d3.scale.linear().domain([MIN_SCORE, MAX_SCORE]).rangeRound(["rgba(44,160,44,0.4)", "rgba(214,39,40,0.4)"]);
 
     var linearEase = function(from, to, pct) {
