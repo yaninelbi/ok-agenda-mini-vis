@@ -1,0 +1,332 @@
+/* Artfully masterminded by Oknesset.org  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Scatter Chart
+:: Bar Chart
+*/
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+/*  FONT EMBED  */
+@font-face {
+    font-family: 'Carmela';
+    src: url('fonts/carmela.eot');
+    src: url('fonts/carmela.eot?#iefix') format('embedded-opentype'),
+         url('fonts/carmela.woff') format('woff'),
+         url('fonts/carmela.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body, div {
+  direction: rtl;
+  text-align: right;
+}
+
+body, h3 {
+  font-family: carmela, Arial, sans-serif;
+}
+
+a {
+  color: #DD390D;
+  font-weight: bold;
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+.loading {
+  font-size: 18px;
+  font-weight: bold;
+  margin:0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.charts {
+  display: none;
+  margin: 0 auto;
+  clear: both;
+  padding: 0 5%;
+}
+
+.meta {
+  padding: 10px 0;
+}
+
+.collaborators img {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar {
+  background: url('img/default-avatar.png') no-repeat;
+  border-radius: 100px;
+  border: 0;
+  background-size: 100% 100%;
+}
+
+img {
+  height: auto;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+
+/* -----------------------------------------
+   Scatter Chart
+----------------------------------------- */
+
+svg circle {
+  stroke-opacity: 1; fill-opacity: 0.5; /* stroke: #2ca02c; fill: #2ca02c; */
+}
+svg rect {
+  fill-opacity: 0.5; /* stroke: #d62728; fill: #d62728; */
+  stroke-opacity: 1;
+}
+.axis path,
+.axis line {
+	fill: none;
+	stroke: black;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	font-family: sans-serif;
+	font-size: 11px;
+}
+
+/**********
+*  General SVG CSS
+*/
+
+text {
+  font: 12px sans-serif;
+}
+
+/**********
+*  Legend
+*/
+
+.legend .series {
+  cursor: pointer;
+}
+
+.legend circle {
+  stroke-width: 2px;
+}
+
+.legend .disabled circle {
+  fill-opacity: 0;
+}
+
+/**********
+*  Axes
+*/
+
+.axis path {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .70;
+  shape-rendering: crispEdges;
+}
+
+.axis path.domain {
+  stroke-opacity: .70;
+}
+
+.axis line {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .25;
+  shape-rendering: crispEdges;
+}
+
+.axis line.zero {
+  stroke-opacity: .70;
+}
+
+.green {
+  stroke-opacity: 1;
+  fill-opacity: 0.5;
+  stroke: #2CA02C;
+  fill: #2CA02C;
+}
+
+.red {
+  stroke-opacity: 1;
+  fill-opacity: 0.5;
+  stroke: #D62728;
+  fill: #D62728;
+}
+
+/* -----------------------------------------
+   Bar Chart
+----------------------------------------- */
+
+/* GLOBALS */
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+::selection {
+    background: transparent;
+}
+
+::-moz-selection {
+    background: transparent;
+}
+
+.wrapper-party {
+    *zoom: 1;
+    margin-top:20px;
+    font-weight: 400;
+}
+
+.wrapper-party:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/* Dropdown */
+
+.wrapper-reset {
+      /* Size and position */
+    position: relative; /* Enable absolute positionning for children and pseudo elements */
+    padding: 5px 10px;
+
+    /* Styles */
+    background: #fff;
+    color: #DD390D;
+    outline: none;
+    cursor: pointer;
+
+    /* Font settings */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top:8px;
+}
+.wrapper-dropdown {
+    cursor: pointer;
+    /* Size and position */
+    position: relative; /* Enable absolute positionning for children and pseudo elements */
+    width: 200px;
+    padding: 6px 5px 4px;
+
+    /* Styles */
+    background: #DD390D;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+
+    /* Font settings */
+    font-weight: bold;
+}
+
+.wrapper-dropdown > span {
+  display: block;
+  width: 80%;
+}
+
+.wrapper-dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 38px;
+    top: 50%;
+    margin-top: -6px;
+    border-width: 6px 6px 6px 0;
+    border-style: solid;
+    border-color: transparent #fff;
+}
+
+.wrapper-dropdown .dropdown {
+    /* Size & position */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    /* Styles */
+    background: #f2f2f2;
+    list-style: none;
+    font-weight: normal; /* Cancels previous font-weight: bold; */
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 200;
+    display: none;
+}
+
+.wrapper-dropdown .dropdown li a {
+    display: block;
+    text-decoration: none;
+    color: #9e9e9e;
+    padding: 5px 10px;
+}
+
+/* Hover state */
+.wrapper-dropdown-1 .dropdown li:hover a {
+    background: #f3f8f8;
+}
+
+/* Active state */
+.wrapper-dropdown.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    display: block; /* TODO: Not sure if display:block vs opacity change is a better solution */
+}
+
+.wrapper-dropdown.active:after {
+    border-color: #DD390D transparent;
+    border-width: 6px 6px 0 6px ;
+    margin-top: -3px;
+}
+
+.wrapper-dropdown.active {
+  background: #DD390D;
+  background: -moz-linear-gradient(right,  #DD390D 0%, #DD390D 71%, #f2f2f2 71%, #f2f2f2 100%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(0%,#DD390D), color-stop(71%,#DD390D), color-stop(71%,#ffffff), color-stop(100%,#ffffff));
+  background: -webkit-linear-gradient(right,  #DD390D 0%,#DD390D 71%,#f2f2f2 71%,#f2f2f2 100%);
+  background: -o-linear-gradient(right,  #DD390D 0%,#DD390D 71%,#f2f2f2 71%,#f2f2f2 100%);
+  background: -ms-linear-gradient(right,  #DD390D 0%,#DD390D 71%,#f2f2f2 71%,#f2f2f2 100%);
+  background: linear-gradient(to right,  #DD390D 0%,#DD390D 71%,#f2f2f2 71%,#f2f2f2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DD390D', endColorstr='#f2f2f2',GradientType=1 );
+}
+
+/* No CSS3 support */
+
+.no-opacity       .wrapper-dropdown .dropdown,
+.no-pointerevents .wrapper-dropdown .dropdown {
+    display: none;
+    opacity: 1; /* If opacity support but no pointer-events support */
+    pointer-events: auto; /* If pointer-events support but no pointer-events support */
+}
+
+.no-opacity       .wrapper-dropdown.active .dropdown,
+.no-pointerevents .wrapper-dropdown.active .dropdown {
+    display: block;
+}

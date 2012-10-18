@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="e"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  <title>הסדנה לידע ציבורי</title>
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="styles/foundation.min.css">
+  <link rel="stylesheet" href="styles/tipsy.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <script src="scripts/vendor/modernizr.foundation.js"></script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <div class="loading">
+    טוען מידע מכנסת פתוחה...
+  </div>
+  <div class="loader"></div>
+
+  <div class="charts">
+
+
+  <div class="">
+      <h3>התפלגות המפלגות</h3>
+      <div id="scatter-chart"></div>
+      <div class="meta"></div>
+  </div>
+
+  <div class="">
+      <h3>התפלגות חברי הכנסת</h3>
+
+      <div id="bar-chart"></div>
+        <div class="wrapper-party">
+          <div id="dd" class="wrapper-dropdown" tabindex="1">
+            <span>כל המפלגות</span>
+            <ul id="parties" class="dropdown" tabindex="1">
+              <li><a href="#">כל המפלגות</a></li>
+            </ul>
+            <div class="wrapper-reset">X</div>
+          </div>
+        ​</div>
+
+      <div class="meta"><a href="/"><img src="" class="avatar" title=""></a></div>
+  </div>
+
+
+  <!-- Included JS Files (Uncompressed) -->
+  <script src="scripts/vendor/jquery-1.8.2.js"></script>
+  <script src="scripts/vendor/d3.v2.js"></script>
+  <script src="scripts/vendor/underscore.js"></script>
+  <script src="scripts/vendor/spin.js"></script>
+  <script src="scripts/vendor/jquery.tipsy.js"></script>
+
+  <!-- Initialize JS Plugins -->
+  <script src="scripts/app.js"></script>
+</body>
+</html>
