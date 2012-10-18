@@ -3,6 +3,18 @@ ok-agenda-mini-vis
 
 Mini visualisations for the agenda feature on Open Knesset
 
+## TODOS
+
+* Zooming and spanning
+
+* + and - "icons", axis and legends
+
+* Circles bellow the axis for members without enough data
+
+* Refactoring
+
+## About
+
 ![Screenshot](https://github.com/yaninelbi/ok-agenda-mini-vis/blob/master/screen.png?raw=true "Screenshot")
 
 ![Sketch](http://www.hasadna.org.il/wp-content/uploads/2012/10/oknesset-agenda-widget-sketch-2.png "Optional title")
